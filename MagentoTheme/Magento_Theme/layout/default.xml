@@ -1,0 +1,16 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <container name="header.top.banner" htmlTag="div" htmlClass="header-banner" before="-">
+                <block class="Magento\Framework\View\Element\Template" name="free.shipping.banner" template="Magento_Theme::free_shipping_banner.phtml" ifconfig="carriers/freeshipping/active" />
+            </container>
+        </referenceContainer>
+        
+        <referenceContainer name="page.wrapper">
+            <container name="page-bottom" as="page_bottom" label="Page Bottom" htmlTag="div" htmlClass="page-bottom" before="footer"/>
+        </referenceContainer>
+
+        <move element="form.subscribe" destination="page-bottom" />
+
+    </body>
+</page>
